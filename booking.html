@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Бронирование — Лашери Отель</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="subpage-header">
+<div class="container">
+<h1>Бронирование</h1>
+<nav><a class="back" href="index.html">← На главную</a></nav>
+</div>
+</header>
+
+
+<main class="booking-form">
+<form id="bookingForm">
+<label>Имя:<input type="text" name="name" placeholder="Ваше имя" required></label>
+<label>Телефон:<input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required></label>
+<label>Дата заезда:<input type="date" name="checkin" required></label>
+<label>Дата выезда:<input type="date" name="checkout" required></label>
+<label>Тип номера:
+<select name="roomType">
+<option>Стандарт</option>
+<option>Делюкс</option>
+<option>Семейный</option>
+</select>
+</label>
+<button type="submit" class="btn">Отправить заявку</button>
+</form>
+
+
+<div id="message" class="hidden"></div>
+</main>
+
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+e.preventDefault();
+var name = this.name.value;
+var phone = this.phone.value;
+// здесь можно добавить отправку на сервер (fetch)
+document.getElementById('message').className = '';
+document.getElementById('message').innerText = 'Спасибо, ' + name + '! Ваша заявка принята. Мы свяжемся по телефону ' + phone + '.';
+this.reset();
+});
+</script>
+
+
+<footer>
+<p>© 2025 Лашери Отель</p>
+</footer>
+</body>
+</html>

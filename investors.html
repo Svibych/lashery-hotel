@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инвесторы - Гранд Отель Агой</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f8f8f8; color: #333; margin: 0; padding: 0; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header, footer { background-color: #003366; color: white; padding: 20px 0; }
+        h1, h2, h3 { color: #003366; }
+        .btn { background-color: #ff6600; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px; border-radius: 5px; transition: background-color 0.3s ease; }
+        .btn:hover { background-color: #e65c00; }
+        .section { padding: 60px 0; border-bottom: 1px solid #ddd; }
+        .flex { display: flex; justify-content: space-between; align-items: center; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 20px; width: 80%; max-width: 500px; border-radius: 8px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .flex { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container flex">
+            <h1>Гостиничный комплекс "Гранд Отель Агой"</h1>
+            <nav>
+                <ul class="flex" style="list-style: none; gap: 20px;">
+                    <li><a href="index.html" style="color: white; text-decoration: none;">Главная</a></li>
+                    <li><a href="about.html" style="color: white; text-decoration: none;">О проекте</a></li>
+                    <li><a href="rooms.html" style="color: white; text-decoration: none;">Номера</a></li>
+                    <li><a href="advantages.html" style="color: white; text-decoration: none;">Преимущества</a></li>
+                    <li><a href="investors.html" style="color: white; text-decoration: none;">Инвесторы</a></li>
+                    <li><a href="contacts.html" style="color: white; text-decoration: none;">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Предложения для инвесторов</h2>
+            <p>Инвестируйте в Гранд Отель Агой и получайте стабильный доход от туристического бизнеса на Черном море.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Доля в номерах</h3>
+                    <p>Приобретайте долю в номерах и получайте доход от аренды.</p>
+                </div>
+                <div class="card">
+                    <h3>Высокий ROI</h3>
+                    <p>Доходность до 20% годовых благодаря высокому спросу.</p>
+                </div>
+            </div>
+            <button class="btn" onclick="openModal('formModal')">Оставить заявку</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Гранд Отель Агой. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <h3>Заявка для инвесторов</h3>
+            <form>
+                <input type="text" placeholder="Имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <input type="email" placeholder="Email">
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) { event.target.style.display = 'none'; }
+        }
+    </script>
+</body>
+</html>

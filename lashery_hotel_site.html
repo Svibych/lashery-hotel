@@ -1,0 +1,346 @@
+<!-- Сайт Лашери Отель (несколько страниц) -->
+
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лашери Отель — уют и комфорт в Зернограде</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay"></div>
+    <nav>
+      <h1 class="logo">Лашери Отель</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="rooms.html">Номера</a></li>
+        <li><a href="booking.html">Бронирование</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="hero-text">
+      <h2>Добро пожаловать в Лашери Отель</h2>
+      <p>Современный уют в сердце Зернограда. Забронируйте номер уже сегодня!</p>
+      <a href="booking.html" class="btn">Забронировать</a>
+    </div>
+  </header>
+
+  <section class="intro">
+    <h2>Почему выбирают нас</h2>
+    <div class="features">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Комфортные номера">
+        <h3>Комфортные номера</h3>
+        <p>Современные интерьеры, удобные кровати и приятная атмосфера.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461" alt="Удобное расположение">
+        <h3>Удобное расположение</h3>
+        <p>Мы находимся в спокойном районе Зернограда, рядом с центром и транспортом.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="Завтрак и сервис">
+        <h3>Завтрак и сервис</h3>
+        <p>Вкусный завтрак и дружелюбный персонал сделают ваше утро приятным.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Лашери Отель, г. Зерноград. Все права защищены.</p>
+  </footer>
+</body>
+</html>
+
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас — Лашери Отель</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="subpage-header">
+    <h1>О нас</h1>
+    <nav><a href="index.html">← На главную</a></nav>
+  </header>
+
+  <section class="content">
+    <p>Лашери Отель — современный уютный отель в Зернограде. Мы предлагаем гостям комфортные номера, качественный сервис и тёплую атмосферу. У нас чисто, спокойно и удобно. Каждый номер оборудован всем необходимым для отдыха и работы.</p>
+  </section>
+</body>
+</html>
+
+<!-- rooms.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Номера — Лашери Отель</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="subpage-header">
+    <h1>Наши номера</h1>
+    <nav><a href="index.html">← На главную</a></nav>
+  </header>
+
+  <section class="rooms">
+    <div class="room-card">
+      <img src="https://images.unsplash.com/photo-1600585154206-0e1e6a8e2f7b" alt="Стандарт">
+      <h3>Стандарт</h3>
+      <p>Уютный номер с одной двуспальной кроватью, кондиционером, Wi-Fi и душем.</p>
+    </div>
+    <div class="room-card">
+      <img src="https://images.unsplash.com/photo-1600585153937-8e9e3a1a9f73" alt="Делюкс">
+      <h3>Делюкс</h3>
+      <p>Просторный номер с дополнительной зоной отдыха, мини-баром и видом на город.</p>
+    </div>
+    <div class="room-card">
+      <img src="https://images.unsplash.com/photo-1600585153877-57a8c1b7a9e0" alt="Семейный">
+      <h3>Семейный</h3>
+      <p>Идеален для семьи: две комнаты, кухня, ванная, телевизор и кондиционер.</p>
+    </div>
+  </section>
+</body>
+</html>
+
+<!-- booking.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бронирование — Лашери Отель</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="subpage-header">
+    <h1>Бронирование</h1>
+    <nav><a href="index.html">← На главную</a></nav>
+  </header>
+
+  <section class="booking-form">
+    <form>
+      <label>Имя:</label>
+      <input type="text" placeholder="Ваше имя" required>
+
+      <label>Телефон:</label>
+      <input type="tel" placeholder="+7 (___) ___-__-__" required>
+
+      <label>Дата заезда:</label>
+      <input type="date" required>
+
+      <label>Дата выезда:</label>
+      <input type="date" required>
+
+      <label>Тип номера:</label>
+      <select>
+        <option>Стандарт</option>
+        <option>Делюкс</option>
+        <option>Семейный</option>
+      </select>
+
+      <button type="submit" class="btn">Отправить заявку</button>
+    </form>
+  </section>
+</body>
+</html>
+
+<!-- contacts.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — Лашери Отель</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="subpage-header">
+    <h1>Контакты</h1>
+    <nav><a href="index.html">← На главную</a></nav>
+  </header>
+
+  <section class="contacts">
+    <p>📍 Зерноград, Россия</p>
+    <p>📞 +7 (900) 000-00-00</p>
+    <p>✉️ info@lashery-hotel.ru</p>
+    <iframe src="https://yandex.ru/map-widget/v1/?text=Зерноград" width="100%" height="300" frameborder="0"></iframe>
+  </section>
+</body>
+</html>
+
+<!-- css/style.css -->
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  color: #222;
+  background: #fff;
+}
+
+header.hero {
+  background: url('https://images.unsplash.com/photo-1542317854-7e96952eae2e') center/cover no-repeat;
+  color: white;
+  height: 100vh;
+  position: relative;
+}
+
+header .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  background: #c49b66;
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #a17a4f;
+}
+
+section.intro {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  width: 300px;
+  background: #fafafa;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  padding: 0 15px 20px;
+}
+
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 15px;
+}
+
+.subpage-header {
+  background: #c49b66;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+section.content, section.rooms, section.booking-form, section.contacts {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.room-card {
+  background: #fafafa;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.room-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-form input, .booking-form select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.booking-form button {
+  align-self: start;
+  cursor: pointer;
+}
+
+.contacts iframe {
+  margin-top: 20px;
+  border-radius: 10px;
+}
