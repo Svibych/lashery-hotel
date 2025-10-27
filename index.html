@@ -1,68 +1,247 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Лашери Отель — уют и комфорт в Зернограде</title>
-<link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viper Mansion</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* {box-sizing:border-box;}
+body {margin:0;font-family:'Roboto',sans-serif;background:#fff;color:#111;}
+header {background:#111;color:#fff;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+header h1 {margin:0;font-size:28px;color:#d6b280;}
+nav a {color:#d6b280;text-decoration:none;margin-left:20px;font-weight:500;transition:color 0.3s;}
+nav a:hover {color:#fff;}
+.hero {background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920') no-repeat center/cover;height:80vh;display:flex;justify-content:center;align-items:center;text-align:center;background-attachment: fixed;}
+.hero h2 {font-size:48px;background:rgba(0,0,0,0.5);padding:20px 40px;border-radius:10px;color:#d6b280;}
+section {padding:60px 40px;max-width:1200px;margin:auto;}
+section h3 {font-size:32px;margin-bottom:40px;text-align:center;color:#d6b280;}
+.about-content,.amenities-content,.investor-content {max-width:900px;margin:auto;line-height:1.6;text-align:center;}
+.features, .slider-container, .investor-advantages, .investor-offers {display:flex;flex-wrap:wrap;gap:40px;justify-content:center;}
+.feature {background:#f5f5f5;padding:20px;border-radius:10px;width:300px;text-align:center;box-shadow:0 0 15px rgba(0,0,0,0.1);transition:transform 0.3s;}
+.feature:hover {transform:translateY(-5px);}
+.feature h4 {color:#d6b280;margin-bottom:15px;}
+.feature img {width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:15px;}
+.button {display:inline-block;padding:10px 25px;margin-top:15px;background:#d6b280;color:#fff;font-weight:bold;text-decoration:none;border-radius:5px;transition:background 0.3s;}
+.button:hover {background:#b39165;}
+.amenities-icons {display:flex;flex-wrap:wrap;gap:30px;justify-content:center;margin-top:40px;}
+.amenity {flex:1 1 200px;text-align:center;}
+.amenity img {width:80px;height:80px;margin-bottom:15px;}
+.slider, .parallax-gallery {display:flex;overflow:hidden;gap:20px;justify-content:center;margin-top:40px;}
+.slider img {width:300px;height:200px;object-fit:cover;border-radius:10px;transition:transform 0.5s;}
+.investor-section {background:#f9f9f9;padding:60px 40px;}
+.investor-stats {display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:40px;}
+.stat {background:#fff;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);width:200px;text-align:center;}
+.stat h4 {color:#d6b280;font-size:28px;margin-bottom:10px;}
+footer {background:#111;color:#fff;text-align:center;padding:30px 20px;}
+footer p a {color:#d6b280;text-decoration:none;}
+.investor-block h4 {text-align:center;color:#d6b280;margin-bottom:30px;}
+.investor-advantages div, .investor-offers div {flex:1 1 200px;text-align:center;opacity:0;transform:translateY(30px);transition:all 0.6s;}
+.investor-advantages div.visible, .investor-offers div.visible {opacity:1;transform:translateY(0);}
+.investor-scheme {display:flex;flex-wrap:wrap;justify-content:center;gap:20px;text-align:center;align-items:center;margin-top:50px;opacity:0;transform:translateY(30px);transition:all 0.6s;}
+.investor-scheme.visible {opacity:1;transform:translateY(0);}
+.investor-scheme div {flex:1 1 200px;padding:20px;background:#d6b280;color:#fff;border-radius:10px;}
+.investor-scheme div.arrow {flex:0 0 50px;color:#111;font-size:24px;font-weight:bold;background:none;}
+.slider-btn {background:#d6b280;color:#fff;border:none;padding:10px 15px;margin:10px;cursor:pointer;border-radius:5px;transition:background 0.3s;}
+.slider-btn:hover {background:#b39165;}
+/* Плавное появление блоков */
+.fade-block {opacity:0;transform:translateY(30px);transition:all 0.6s;}
+.fade-block.visible {opacity:1;transform:translateY(0);}
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    .features, .slider, .investor-advantages, .investor-offers, .investor-scheme {flex-direction: column;align-items:center;}
+    .slider img, .feature {width:90%;}
+    iframe {width:100%;height:auto;}
+}
+@media (max-width: 768px) {
+    header {flex-direction: column;align-items:flex-start;}
+    nav {margin-top:10px;display:flex;flex-wrap:wrap;gap:15px;}
+}
+@media (max-width: 480px) {
+    .hero h2 {font-size:28px;padding:15px 20px;}
+    .slider-btn {padding:8px 12px;margin:5px;}
+}
+</style>
 </head>
 <body>
-<header class="hero">
-  <div class="overlay"></div>
-  <nav class="nav">
-    <h1 class="logo">Лашери Отель</h1>
-    <ul class="nav-links">
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="about.html">О нас</a></li>
-      <li><a href="rooms.html">Номера</a></li>
-      <li><a href="booking.html">Бронирование</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
 
-  <div class="hero-text">
-    <h2>Добро пожаловать в Лашери Отель</h2>
-    <p>Современный уют в сердце Зернограда. Забронируйте номер уже сегодня!</p>
-    <a href="booking.html" class="btn">Забронировать</a>
-  </div>
+<header>
+    <h1>Viper Mansion</h1>
+    <nav>
+        <a href="#about">О нас</a>
+        <a href="#rooms">Номера</a>
+        <a href="#amenities">Услуги</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#investors">Инвесторам</a>
+        <a href="#contact">Контакты</a>
+    </nav>
 </header>
 
-<main>
-  <section class="intro">
-    <h2>Почему выбирают нас</h2>
-    <div class="features">
-      <article class="card">
-        <img src="images/room1.jpg" alt="Комфортные номера">
-        <h3>Комфортные номера</h3>
-        <p>Современные интерьеры, удобные кровати и приятная атмосфера.</p>
-      </article>
-      <article class="card">
-        <img src="images/room2.jpg" alt="Удобное расположение">
-        <h3>Удобное расположение</h3>
-        <p>Мы находимся в спокойном районе Зернограда, рядом с центром и транспортом.</p>
-      </article>
-      <article class="card">
-        <img src="images/restaurant.jpg" alt="Завтрак и сервис">
-        <h3>Завтрак и сервис</h3>
-        <p>Вкусный завтрак и дружелюбный персонал сделают ваше утро приятным.</p>
-      </article>
-    </div>
-  </section>
+<section class="hero">
+    <h2>Добро пожаловать в Viper Mansion</h2>
+</section>
 
-  <!-- Новая секция с галереей -->
-  <section class="gallery fade-in">
-    <h2>Наши удобства</h2>
-    <div class="gallery-images">
-      <img src="images/spa.jpg" alt="SPA зона">
-      <img src="images/city.jpg" alt="Вид города">
+<section id="about">
+    <h3>О нашем отеле</h3>
+    <div class="about-content fade-block">
+        <p>Viper Mansion — современный отель, где стиль встречается с комфортом. Наслаждайтесь роскошными интерьерами, уютными номерами и первоклассным обслуживанием в самом сердце города.</p>
+        <p>Мы создаём уникальный опыт для каждого гостя, предлагая непревзойденное качество и атмосферу роскоши.</p>
     </div>
-  </section>
+</section>
 
-</main>
+<section id="rooms">
+    <h3>Наши номера</h3>
+    <div class="slider-container fade-block">
+        <button class="slider-btn" onclick="slideLeft('roomSlider')">◀</button>
+        <div class="slider" id="roomSlider">
+            <div class="feature fade-block"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"><h4>Стандарт</h4><p>Уютные номера с современным дизайном и всеми удобствами.</p></div>
+            <div class="feature fade-block"><img src="https://images.unsplash.com/photo-1582719478187-6c98e8a9fa85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"><h4>Люкс</h4><p>Просторные люксы с панорамными окнами.</p></div>
+            <div class="feature fade-block"><img src="https://images.unsplash.com/photo-1576675785903-85b1f64f1c30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"><h4>Сьют</h4><p>Элегантные сьюты с отдельной зоной отдыха.</p></div>
+        </div>
+        <button class="slider-btn" onclick="slideRight('roomSlider')">▶</button>
+    </div>
+</section>
+
+<section id="amenities">
+    <h3>Услуги и инфраструктура</h3>
+    <div class="amenities-content fade-block">
+        <p>Мы предлагаем широкий спектр услуг: бассейн, спа, фитнес-центр, ресторан с изысканной кухней, конференц-залы и многое другое. Каждый гость получает индивидуальный сервис и незабываемый опыт пребывания.</p>
+    </div>
+    <div class="amenities-icons fade-block">
+        <div class="amenity"><img src="https://img.icons8.com/ios-filled/80/000000/spa.png"/><p>Спа</p></div>
+        <div class="amenity"><img src="https://img.icons8.com/ios-filled/80/000000/swimming-pool.png"/><p>Бассейн</p></div>
+        <div class="amenity"><img src="https://img.icons8.com/ios-filled/80/000000/dumbbell.png"/><p>Фитнес</p></div>
+        <div class="amenity"><img src="https://img.icons8.com/ios-filled/80/000000/restaurant.png"/><p>Ресторан</p></div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h3>Галерея</h3>
+    <div class="slider-container parallax-gallery fade-block">
+        <button class="slider-btn" onclick="slideLeft('gallerySlider')">◀</button>
+        <div class="slider" id="gallerySlider">
+            <img src="https://images.unsplash.com/photo-1590490350183-2b4c438823bb" class="fade-block">
+            <img src="https://images.unsplash.com/photo-1582719478187-6c98e8a9fa85" class="fade-block">
+            <img src="https://images.unsplash.com/photo-1576675785903-85b1f64f1c30" class="fade-block">
+        </div>
+        <button class="slider-btn" onclick="slideRight('gallerySlider')">▶</button>
+    </div>
+</section>
+
+<section id="investors" class="investor-section">
+    <h3>Для инвесторов</h3>
+    
+    <div style="text-align:center;margin-bottom:50px;" class="fade-block">
+        <h4 style="color:#d6b280;">Онлайн показ</h4>
+        <iframe width="800" height="450" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="Презентация Viper Mansion" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="investor-advantages fade-block">
+        <h4>Преимущества</h4>
+        <div class="fade-block"><img src="https://img.icons8.com/ios-filled/80/000000/star.png"/><p>Высокий стандарт обслуживания</p></div>
+        <div class="fade-block"><img src="https://img.icons8.com/ios-filled/80/000000/growth.png"/><p>Стабильный рост доходов</p></div>
+        <div class="fade-block"><img src="https://img.icons8.com/ios-filled/80/000000/handshake.png"/><p>Прозрачные условия сотрудничества</p></div>
+        <div class="fade-block"><img src="https://img.icons8.com/ios-filled/80/000000/secure.png"/><p>Надежность и безопасность</p></div>
+    </div>
+
+    <div class="investor-offers fade-block">
+        <h4>Предложения для инвесторов</h4>
+        <div class="fade-block" style="background:#fff;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);width:250px;text-align:center;">
+            <h4>Участие в прибыли</h4>
+            <p>Инвестор получает процент от чистой прибыли отеля.</p>
+        </div>
+        <div class="fade-block" style="background:#fff;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);width:250px;text-align:center;">
+            <h4>Долгосрочные инвестиции</h4>
+            <p>Возможность участия в проекте на 3-5 лет с гарантией дохода.</p>
+        </div>
+        <div class="fade-block" style="background:#fff;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);width:250px;text-align:center;">
+            <h4>Индивидуальные условия</h4>
+            <p>Прозрачные и персонализированные условия для каждого инвестора.</p>
+        </div>
+    </div>
+
+    <div class="investor-scheme fade-block">
+        <h4>Схема взаимодействия</h4>
+        <div>
+            <div>Обсуждение условий</div>
+            <div class="arrow">→</div>
+            <div>Подписание договора</div>
+            <div class="arrow">→</div>
+            <div>Инвестирование</div>
+            <div class="arrow">→</div>
+            <div>Получение дохода</div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h3>Контакты</h3>
+    <div class="about-content fade-block">
+        <p>Email: info@vipermansion.com</p>
+        <p>Телефон: +7 (123) 456-78-90</p>
+        <p>Адрес: г. Москва, ул. Роскошная, д. 1</p>
+    </div>
+</section>
 
 <footer>
-<p>© 2025 Лашери Отель, г. Зерноград. Все права защищены.</p>
+    <p>&copy; 2025 Viper Mansion. Все права защищены.</p>
 </footer>
+
+<script>
+// Слайдеры
+function slideLeft(id) {
+    const slider = document.getElementById(id);
+    slider.scrollBy({left:-320,behavior:'smooth'});
+}
+function slideRight(id) {
+    const slider = document.getElementById(id);
+    slider.scrollBy({left:320,behavior:'smooth'});
+}
+
+// Плавное появление блоков и параллакс
+function animateBlocks() {
+    const allBlocks = document.querySelectorAll('.fade-block');
+    const galleryImgs = document.querySelectorAll('.parallax-gallery img');
+    const triggerBottom = window.innerHeight * 0.85;
+    const scrollTop = window.pageYOffset;
+
+    allBlocks.forEach((block) => {
+        const blockTop = block.getBoundingClientRect().top;
+        if(blockTop < triggerBottom) block.classList.add('visible');
+    });
+
+    galleryImgs.forEach((img, index) => {
+        let factor = window.innerWidth <= 768 ? 0.05*(index+1) : 0.1*(index+1);
+        img.style.transform = `translateY(${scrollTop * factor}px)`;
+    });
+}
+window.addEventListener('scroll', animateBlocks);
+window.addEventListener('load', animateBlocks);
+
+// Гамбургер меню
+const header = document.querySelector('header');
+const nav = header.querySelector('nav');
+const menuBtn = document.createElement('button');
+menuBtn.innerHTML = '☰';
+menuBtn.style.background='none';
+menuBtn.style.border='none';
+menuBtn.style.color='#d6b280';
+menuBtn.style.fontSize='28px';
+menuBtn.style.cursor='pointer';
+menuBtn.style.display='none';
+menuBtn.addEventListener('click', ()=> {
+    if(nav.style.display==='flex') nav.style.display='none';
+    else nav.style.display='flex';
+});
+header.insertBefore(menuBtn, nav);
+function checkMenu() {
+    if(window.innerWidth<=768) {menuBtn.style.display='block';nav.style.display='none';}
+    else {menuBtn.style.display='none';nav.style.display='flex';}
+}
+window.addEventListener('resize', checkMenu);
+window.addEventListener('load', checkMenu);
+</script>
 
 </body>
 </html>

@@ -1,113 +1,127 @@
-/* --- Общие стили --- */
-body {
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
   color: #222;
-  background-color: #fff;
+  background: #fff;
+  line-height: 1.6;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* --- Хедер и навигация --- */
-header.hero {
+/* ====== HERO ====== */
+.hero {
   position: relative;
   height: 100vh;
-  background: url('../images/hero.jpg') center/cover no-repeat;
-  color: #fff;
+  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-header .overlay {
+.overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.4);
 }
 
-header .nav {
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
-  position: relative;
-  z-index: 2;
-  backdrop-filter: blur(8px);
+  padding: 15px 40px;
+  z-index: 10;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+.nav .logo {
+  color: white;
+  font-size: 24px;
 }
 
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 20px;
-  list-style: none;
 }
 
 .nav-links a {
-  color: #fff;
+  color: white;
+  text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
 }
 
 .nav-links a:hover {
-  color: #c49b66;
+  color: #ffd700;
 }
 
-/* --- Hero текст --- */
 .hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  position: relative;
   z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .hero-text h2 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-}
-
-.hero-text p {
-  font-size: 1.2rem;
+  font-size: 48px;
   margin-bottom: 20px;
 }
 
 .btn {
   display: inline-block;
-  background: #c49b66;
-  color: #fff;
-  padding: 12px 30px;
-  border-radius: 5px;
+  padding: 10px 25px;
+  background: #ffd700;
+  color: black;
+  border-radius: 25px;
+  text-decoration: none;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #a17a4f;
+  background: #fff;
 }
 
-/* --- Карточки --- */
-.features, .gallery-images {
+/* ====== ОСНОВНЫЕ РАЗДЕЛЫ ====== */
+.intro, .invest {
+  padding: 80px 10%;
+  background: #fff;
+}
+
+.intro h2, .invest h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.features {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
+  justify-content: center;
 }
 
 .card {
-  background: #fafafa;
-  border-radius: 10px;
+  background: #f8f8f8;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 320px;
+  text-align: center;
   transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
@@ -116,116 +130,57 @@ header .nav {
   object-fit: cover;
 }
 
-.card h3 {
-  margin: 10px 0;
+/* ====== ИНВЕСТОРАМ ====== */
+.invest {
+  background: #fafafa;
+  line-height: 1.8;
+}
+
+.invest .intro-text {
+  max-width: 800px;
+  margin: 0 auto 30px;
   text-align: center;
+  font-size: 18px;
+  color: #444;
 }
 
-.card p {
-  padding: 0 15px 20px;
+.invest-block {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.invest-block h3 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.invest-block.highlight {
+  border-left: 6px solid #ffd700;
+}
+
+.invest-contact {
   text-align: center;
+  margin-top: 40px;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* --- Галерея --- */
-.gallery-images img {
-  width: 45%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s;
-}
-
-.gallery-images img:hover {
-  transform: scale(1.05);
-}
-
-/* --- Секции --- */
-.section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* --- Footer --- */
 footer {
-  background: #222;
-  color: #ccc;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
+  background: #111;
+  color: white;
 }
 
-/* --- Анимация появления --- */
+/* ====== АНИМАЦИЯ ПРИ ПРОКРУТКЕ ====== */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(50px);
   transition: all 0.8s ease;
 }
-
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* --- Мобильное меню --- */
-.burger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.burger span {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-}
-
-/* Скрыто по умолчанию */
-.mobile-menu {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(10px);
-  z-index: 10;
-  padding-top: 80px;
-  text-align: center;
-}
-
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.mobile-menu li {
-  margin: 20px 0;
-}
-
-.mobile-menu a {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* --- Адаптив --- */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .burger {
-    display: flex;
-  }
-
-  .gallery-images img {
-    width: 90%;
-  }
 }

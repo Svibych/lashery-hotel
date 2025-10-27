@@ -1,84 +1,204 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Инвесторы - Гранд Отель Агой</title>
-    <style>
-        body { font-family: 'Arial', sans-serif; background-color: #f8f8f8; color: #333; margin: 0; padding: 0; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header, footer { background-color: #003366; color: white; padding: 20px 0; }
-        h1, h2, h3 { color: #003366; }
-        .btn { background-color: #ff6600; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px; border-radius: 5px; transition: background-color 0.3s ease; }
-        .btn:hover { background-color: #e65c00; }
-        .section { padding: 60px 0; border-bottom: 1px solid #ddd; }
-        .flex { display: flex; justify-content: space-between; align-items: center; }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
-        .modal-content { background: white; padding: 20px; width: 80%; max-width: 500px; border-radius: 8px; }
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .flex { flex-direction: column; } }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Инвесторам — Лашери Отель</title>
+  <meta name="description" content="Инвестиционные предложения по проекту Лашери Отель в Зернограде. Условия, преимущества, финансовая модель и контакты для инвесторов.">
+  <link rel="stylesheet" href="css/investors.css">
 </head>
 <body>
-    <header>
-        <div class="container flex">
-            <h1>Гостиничный комплекс "Гранд Отель Агой"</h1>
-            <nav>
-                <ul class="flex" style="list-style: none; gap: 20px;">
-                    <li><a href="index.html" style="color: white; text-decoration: none;">Главная</a></li>
-                    <li><a href="about.html" style="color: white; text-decoration: none;">О проекте</a></li>
-                    <li><a href="rooms.html" style="color: white; text-decoration: none;">Номера</a></li>
-                    <li><a href="advantages.html" style="color: white; text-decoration: none;">Преимущества</a></li>
-                    <li><a href="investors.html" style="color: white; text-decoration: none;">Инвесторы</a></li>
-                    <li><a href="contacts.html" style="color: white; text-decoration: none;">Контакты</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container">
-        <section class="section">
-            <h2>Предложения для инвесторов</h2>
-            <p>Инвестируйте в Гранд Отель Агой и получайте стабильный доход от туристического бизнеса на Черном море.</p>
-            <div class="grid">
-                <div class="card">
-                    <h3>Доля в номерах</h3>
-                    <p>Приобретайте долю в номерах и получайте доход от аренды.</p>
-                </div>
-                <div class="card">
-                    <h3>Высокий ROI</h3>
-                    <p>Доходность до 20% годовых благодаря высокому спросу.</p>
-                </div>
-            </div>
-            <button class="btn" onclick="openModal('formModal')">Оставить заявку</button>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Гранд Отель Агой. Все права защищены.</p>
-        </div>
-    </footer>
-
-    <div id="formModal" class="modal">
-        <div class="modal-content">
-            <h3>Заявка для инвесторов</h3>
-            <form>
-                <input type="text" placeholder="Имя" required>
-                <input type="tel" placeholder="Телефон" required>
-                <input type="email" placeholder="Email">
-                <button type="submit" class="btn">Отправить</button>
-            </form>
-        </div>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Лашери Отель — на главную">Лашери Отель</a>
+      <nav class="main-nav" role="navigation" aria-label="Главное меню">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="rooms.html">Номера</a></li>
+          <li><a href="booking.html">Бронирование</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a class="active" href="investors.html">Инвесторам</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <script>
-        function openModal(id) { document.getElementById(id).style.display = 'flex'; }
-        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) { event.target.style.display = 'none'; }
-        }
-    </script>
+  <main>
+    <!-- Hero -->
+    <section class="hero-compact" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 id="hero-title">Инвестиции в Лашери Отель</h1>
+          <p class="lead">Проект отеля премиум-класса в Зернограде: стабильный доход, прозрачная схема и профессиональное управление.</p>
+          <p class="cta-row">
+            <a class="btn primary" href="#offer">Узнать предложение</a>
+            <a class="btn ghost" href="#contact">Связаться с нами</a>
+          </p>
+        </div>
+        <div class="hero-media" role="img" aria-label="Вид на отель">
+          <img src="https://images.unsplash.com/photo-1501117716987-c8e3b8a8f6b9?w=1200&q=80&auto=format&fit=crop" alt="Вид отеля">
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick facts -->
+    <section class="container facts" aria-label="Ключевые показатели">
+      <ul class="facts-list" role="list">
+        <li><strong>Класс:</strong> Resort & SPA</li>
+        <li><strong>Статус:</strong> Проект / Подготовка к строительству</li>
+        <li><strong>Финансирование:</strong> проектное, ФЗ-214 (по запросу)</li>
+        <li><strong>Оператор:</strong> международный профильный оператор</li>
+      </ul>
+    </section>
+
+    <!-- Why invest -->
+    <section class="container section" id="why" aria-labelledby="why-title">
+      <h2 id="why-title">Почему это интересно инвестору</h2>
+      <div class="cols">
+        <article class="col">
+          <h3>Престижное расположение</h3>
+          <p>Проект запланирован в туристически привлекательной зоне региона — высокая сезонность и спрос на размещение обеспечивают стабильную загрузку в пиковый период и хорошие показатели ADR.</p>
+        </article>
+        <article class="col">
+          <h3>Под ключ и с управлением</h3>
+          <p>Полный спектр услуг: строительство, ввод в эксплуатацию, брендирование и операционное управление специалистом с международным опытом — вы получаете пассивный доход без операционных задач.</p>
+        </article>
+        <article class="col">
+          <h3>Юридическая защита</h3>
+          <p>Работа по ФЗ-214 и банковское сопровождение проекта снижают риски для инвесторов и увеличивают прозрачность сделки.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Offer -->
+    <section class="container section light" id="offer" aria-labelledby="offer-title">
+      <h2 id="offer-title">Инвестиционное предложение</h2>
+
+      <div class="offer-grid">
+        <div class="offer-card">
+          <h4>Вариант A — Долевое участие</h4>
+          <ul>
+            <li>Минимальная сумма инвестирования: 5 000 000 ₽</li>
+            <li>Доля в проекте: обсуждается индивидуально</li>
+            <li>Ожидаемая IRR: 12–18% (в зависимости от структуры и периода)</li>
+          </ul>
+        </div>
+
+        <div class="offer-card">
+          <h4>Вариант B — Кредитование / проектные облигации</h4>
+          <ul>
+            <li>Фиксированный доход: от 8% годовых</li>
+            <li>Сроки: 1–5 лет</li>
+            <li>Банковское обеспечение / залоги в проекте</li>
+          </ul>
+        </div>
+
+        <div class="offer-card">
+          <h4>Вариант C — Инвестиции в номера</h4>
+          <ul>
+            <li>Приобретение номера с управлением (выгода от сдачи)</li>
+            <li>Гарантия дохода первые 1–2 сезона (по договору)</li>
+            <li>Возможность личного пользования по квоте</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="note">Все финансовые показатели предварительны и подлежат подтверждению детальной финансовой моделью и due diligence.</p>
+    </section>
+
+    <!-- Financials & risks -->
+    <section class="container section" id="finance" aria-labelledby="finance-title">
+      <h2 id="finance-title">Финансовая модель & управление рисками</h2>
+      <div class="cols">
+        <div class="col">
+          <h3>Прогноз доходности</h3>
+          <p>Модель строится на нескольких сценариях: базовый, оптимистичный и консервативный. Основные драйверы — средняя цена номера (ADR), заполняемость и операционные расходы. Для инвесторов готовится подробная презентация с P&L и прогнозом денежных потоков.</p>
+        </div>
+        <div class="col">
+          <h3>Управление рисками</h3>
+          <p>Риски минимизируются через: банковское сопровождение, поэтапное финансирование, привлечение опытного оператора, страхование строительных и операционных рисков.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms preview -->
+    <section class="container section" id="rooms-preview" aria-labelledby="rooms-title">
+      <h2 id="rooms-title">Форматы номеров и доходность</h2>
+      <div class="cards cards-3">
+        <div class="card small">
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=60&auto=format&fit=crop" alt="Номер Стандарт">
+          <h4>Стандарт</h4>
+          <p>От 28 м² — оптимальный баланс CAPEX/ARR.</p>
+        </div>
+        <div class="card small">
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=60&auto=format&fit=crop" alt="Номер Семейный">
+          <h4>Family</h4>
+          <p>От 35 м² — повышенный спрос в сезон.</p>
+        </div>
+        <div class="card small">
+          <img src="https://images.unsplash.com/photo-1505691723518-36a5b7c2a8f6?w=900&q=60&auto=format&fit=crop" alt="Номер Люкс">
+          <h4>Lux</h4>
+          <p>От 60 м² — премиум-сегмент, высокая маржа.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="container section" id="process" aria-labelledby="process-title">
+      <h2 id="process-title">Процесс взаимодействия</h2>
+      <ol class="process-list">
+        <li><strong>Контакт и бриф:</strong> первичная встреча/звонок, обсуждение формата участия.</li>
+        <li><strong>Презентация и документы:</strong> отправляем инвестиционную презентацию, финансовую модель, правовые документы.</li>
+        <li><strong>Due diligence:</strong> проверка, переговоры по условиям.</li>
+        <li><strong>Заключение сделки:</strong> подписание соглашений, внесение средств.</li>
+        <li><strong>Отчётность:</strong> регулярные отчёты и выплаты по согласованной схеме.</li>
+      </ol>
+    </section>
+
+    <!-- Location & map -->
+    <section class="container section light" id="location" aria-labelledby="location-title">
+      <h2 id="location-title">Расположение</h2>
+      <p>Зерноград — туристически перспективный регион с развитой инфраструктурой и хорошей логистикой. Проект расположен с удобным доступом к ключевым маршрутам и местной инфраструктуре.</p>
+      <div class="map">
+        <!-- Вставь реальную карту (iframe) если у тебя есть; пока заглушка -->
+        <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1200&q=60&auto=format&fit=crop" alt="Вид региона">
+      </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="container section contact" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Связаться с нами</h2>
+      <p>Для получения полной презентации, финансовой модели и условий участия оставьте заявку или свяжитесь напрямую.</p>
+
+      <form id="investorForm" class="contact-form" aria-label="Форма для инвесторов">
+        <label>Имя:<input type="text" name="name" required placeholder="ФИО"></label>
+        <label>Компания (если есть):<input type="text" name="company" placeholder="Компания"></label>
+        <label>Телефон:<input type="tel" name="phone" required placeholder="+7 (___) ___-__-__"></label>
+        <label>Email:<input type="email" name="email" required placeholder="email@example.com"></label>
+        <label>Комментарий:<textarea name="message" rows="4" placeholder="Кратко о заинтересованности"></textarea></label>
+        <button class="btn primary" type="submit">Отправить запрос</button>
+      </form>
+
+      <p class="contact-note">Телефон: +7 (900) 000-00-00 • Email: investors@lashery-hotel.ru</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Лашери Отель — Инвестиционный раздел. Конфиденциальная информация предоставляется по запросу.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Простая обработка формы (локально: показывает сообщение). Подключи реальный бэкенд/почтовый сервис для отправки.
+    document.getElementById('investorForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.');
+      this.reset();
+    });
+  </script>
+
 </body>
 </html>
